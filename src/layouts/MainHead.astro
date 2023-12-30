@@ -11,4 +11,19 @@ const { title, seoTitle, seoDesc } = Astro.props;
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <Themes />
+
+  <style is:global>
+    @font-face {
+      font-family: "Satoshi";
+      src: url("/fonts/Satoshi-Variable.ttf") format("truetype-variations");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+      font-weight: 100 1000;
+    }
+
+    body {
+      font-family: "Satoshi", sans-serif;
+    }
+  </style>
 </head>
