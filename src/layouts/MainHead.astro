@@ -1,13 +1,14 @@
 ---
 import { SEO } from "astro-seo";
+import Themes from "astro-themes";
 const { title, seoTitle, seoDesc } = Astro.props;
 ---
 
 <head>
-    <SEO title={seoTitle} description={seoDesc} />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+  <SEO title={seoTitle} description={seoDesc} />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <Themes />
+  <title>{title}</title>
 </head>
-
