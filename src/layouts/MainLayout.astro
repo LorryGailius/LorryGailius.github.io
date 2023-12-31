@@ -1,4 +1,5 @@
 ---
+import NavBar from "../components/NavBar.astro";
 import MainHead from "./MainHead.astro";
 
 const { title, seoTitle, seoDesc } = Astro.props;
@@ -7,6 +8,7 @@ const { title, seoTitle, seoDesc } = Astro.props;
 <html>
   <MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc} />
   <body class="bg-gray-100 dark:bg-darkslate-600">
+    <NavBar />
     <slot />
   </body>
 </html>
