@@ -1,0 +1,60 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const btnStyle =
+  "py-4 px-6 sm:py-[8px] sm:px-4 dark:hover:bg-neutral-800 hover:bg-neutral-200/70 dark:hover:text-white hover:text-black rounded-full ";
+
+const pages: { name: string; href: string }[] = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Work",
+    href: "/work",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
+
+// Create a button for each page in pages
+---
+
+<nav
+  class="flex flex-row align-middle justify-center pt-5 fixed top-0 w-full sticky z-10"
+>
+  <div class="m-auto p-3 max-w-6xl w-full sm:p-5 md:p-7">
+    <div
+      class="bg-white dark:bg-darkslate-500 shadow-2xl shadow-gray-200 dark:shadow-none rounded-3xl border border-gray-300 dark:border-darkslate-100 py-1 flex flex-row items-center px-1"
+    >
+      <!-- Create a button for each page in pages -->
+      {
+        pages.map((page) => (
+          <a class={btnStyle} href={page.href}>
+            {page.name}
+          </a>
+        ))
+      }
+
+      <noscript>
+        <div>
+          {
+            pages.map((page) => (
+              <a class={btnStyle} href={page.href}>
+                {page.name}
+              </a>
+            ))
+          }
+        </div>
+      </noscript>
+
+      <div class="ml-auto"><ThemeToggle /></div>
+    </div>
+  </div>
+</nav>
