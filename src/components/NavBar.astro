@@ -1,4 +1,6 @@
 ---
+import NavCard from "./Card/NavCard.astro";
+import Sandwich from "./Sandwich.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
 const btnStyle =
@@ -10,28 +12,26 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
-<nav class="flex flex-row pt-5 top-0 w-full z-10 sticky">
-  <div class="m-auto p-3 max-w-6xl w-full sm:p-5 md:p-7 flex justify-center">
-    <div
-      class="bg-white dark:bg-darkslate-500 w-fit shadow-2xl shadow-gray-200 dark:shadow-none rounded-3xl border border-gray-300 dark:border-darkslate-100 py-1 flex flex-row items-center px-1"
+<NavCard>
+  <div class="hidden sm:flex flex-row items-center">
+    <a class={`${btnStyle} ${currentPath === "" ? active : ""}`} href="/"
+      >Home</a
     >
-      <a class={`${btnStyle} ${currentPath === "" ? active : ""}`} href="/"
-        >Home</a
-      >
-      <a
-        class={`${btnStyle} ${currentPath === "about" ? active : ""}`}
-        href="/about">About</a
-      >
-      <a
-        class={`${btnStyle} ${currentPath === "work" ? active : ""}`}
-        href="/work">Work</a
-      >
-      <a
-        class={`${btnStyle} ${currentPath === "contact" ? active : ""}`}
-        href="/contact">Contact</a
-      >
-
-      <div class="ml-5"><ThemeToggle /></div>
-    </div>
+    <a
+      class={`${btnStyle} ${currentPath === "about" ? active : ""}`}
+      href="/about">About</a
+    >
+    <a
+      class={`${btnStyle} ${currentPath === "work" ? active : ""}`}
+      href="/work">Work</a
+    >
+    <a
+      class={`${btnStyle} ${currentPath === "contact" ? active : ""}`}
+      href="/contact">Contact</a
+    >
   </div>
-</nav>
+  <div class="sm:hidden pl-4">
+    <Sandwich currentPath={currentPath} />
+  </div>
+  <div class="ml-auto sm:ml-5"><ThemeToggle /></div>
+</NavCard>
