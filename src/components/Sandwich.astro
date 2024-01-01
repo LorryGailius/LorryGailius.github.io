@@ -15,7 +15,7 @@ const { currentPath } = Astro.props;
 ---
 
 <div>
-  <button id="menuButton" class="flex justify-center align-middle">
+  <button id="sandwich" class="flex justify-center align-middle">
     <Icon name="ri:menu-fill" class="w-6 h-6" />
   </button>
   <div id="flyout" class="z-20 absolute left-0">
@@ -42,7 +42,7 @@ const { currentPath } = Astro.props;
 </div>
 
 <script is:inline>
-  const menuButton = document.getElementById("menuButton");
+  const sandwich = document.getElementById("sandwich");
   const navCard = document.getElementById("flyout");
   let isVisible = false;
 
@@ -52,5 +52,5 @@ const { currentPath } = Astro.props;
   };
 
   navCard.style.display = "none";
-  menuButton.addEventListener("click", toggleNavCard);
+  sandwich.addEventListener("click", toggleNavCard);
 </script>
