@@ -5,7 +5,7 @@ import Projects from "../components/Projects.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
-const projects = (await getCollection("projects")).slice(0, 3);
+const projects = (await getCollection("projects")).slice(0, 2);
 ---
 
 <MainLayout
