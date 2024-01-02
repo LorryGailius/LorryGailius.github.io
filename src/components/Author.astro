@@ -1,12 +1,15 @@
 ---
+import NavCard from "./Card/NavCard.astro";
 import Card from "./Card/index.astro";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-  <p class="text-xs">
-    Made by <a
-      href="https://www.linkedin.com/in/laurynas-gailius/"
-      class="hover:underline">Laurynas Gailius</a
-    > | 2023
-  </p>
-</Card>
+<NavCard>
+  <div class="text-center mx-5 my-2">
+    <p class="text-xs">
+      Made by <a
+        href="https://www.linkedin.com/in/laurynas-gailius/"
+        class="hover:underline">Laurynas Gailius</a
+      > | 2023
+    </p>
+  </div>
+</NavCard>
