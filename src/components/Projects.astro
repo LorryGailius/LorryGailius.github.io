@@ -1,8 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import Card from "./Card/index.astro";
+import { Icon } from "astro-icon/components";
 
 const { projects, title } = Astro.props;
+const linkClass = "";
 ---
 
 <Card title={title} colSpan="sm:col-span-3">
@@ -10,15 +12,21 @@ const { projects, title } = Astro.props;
     projects.map((project: any) => (
       <>
         <div class="flex flex-row gap-5 mt-5">
-          <Image
-            width={100}
-            height={100}
-            src={project.data.image}
-            alt={project.data.title}
-            class="rounded-2xl max-w-24 max-h-24"
-          />
+          <a href={project.data.link} class=" hover:scale-105 duration-300">
+            <Image
+              width={100}
+              height={100}
+              src={project.data.image}
+              alt={`${project.data.title} logo`}
+              class="rounded-2xl max-w-24 max-h-24 hover:shadow-sm"
+            />
+          </a>
           <div class="max-h-24 overflow-hidden text-ellipsis text-pretty">
-            <h1 class="font-bold text-xl">{project.data.title}</h1>
+            <a href={project.data.link}>
+              <h1 class="font-bold text-xl hover:underline">
+                {project.data.title}
+              </h1>
+            </a>
             <p class="font-light text-ellipsis">{project.data.description}</p>
           </div>
         </div>
