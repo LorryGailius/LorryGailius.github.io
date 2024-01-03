@@ -6,12 +6,12 @@ import MainHead from "./MainHead.astro";
 const { title, seoTitle, seoDesc } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="h-screen">
   <MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc} />
-  <body class="bg-gray-100 dark:bg-darkslate-600">
+  <body class="bg-gray-100 dark:bg-darkslate-600 flex flex-col h-full">
     <NavBar />
     <slot />
-    <footer class="mt-10 mb-4">
+    <footer class="m-5">
       <Author />
     </footer>
   </body>
