@@ -1,0 +1,29 @@
+---
+import Avatar from "./Avatar.astro";
+import Card from "./Card/index.astro";
+---
+
+<Card colSpan="md:col-span-1">
+  <div class="flex justify-center flex-col text-center">
+    <div class="m-2">
+      <Avatar />
+    </div>
+    <h1 class="font-extrabold text-2xl text-gray-600 dark:text-gray-400">
+      Hi, I'm Laurynas
+    </h1>
+    <h1 class="font-extrabold text-2xl">Software Engineer</h1>
+    <br />
+    <p class="m-0 font-light text-xl">
+      Looking to find his way in the world of programming<br />
+      Currently studying at
+      <a
+        href="https://www.vu.lt/en/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:underline text-vu-main"
+      >
+        Vilnius University
+      </a>
+    </p>
+  </div>
+</Card>
