@@ -11,9 +11,8 @@ const projects = await getCollection("projects");
   seoTitle="Laurynas Gailius | Projects"
   seoDesc="Collection of projects I've worked on."
 >
-  <main
-    class="m-auto grid gap-2 max-w-4xl relative px-5 sm:px-0 sm:gap-2 md:gap-3 md:grid-cols-2 lg:gap-4 h-fit flex-auto"
-  >
+  <main class="m-auto max-w-4xl relative px-5 flex-auto">
+    <div></div>
     <ProjectsCard title="Projects" projects={projects} />
   </main>
 </MainLayout>
