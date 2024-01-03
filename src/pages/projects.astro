@@ -1,0 +1,19 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ProjectsCard from "../components/ProjectsCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<MainLayout
+  title="Laurynas Gailius | Projects"
+  seoTitle="Laurynas Gailius | Projects"
+  seoDesc="Collection of projects I've worked on."
+>
+  <main
+    class="m-auto grid gap-2 max-w-4xl relative px-5 sm:px-0 sm:gap-2 md:gap-3 md:grid-cols-2 lg:gap-4 h-fit flex-auto"
+  >
+    <ProjectsCard title="Projects" projects={projects} />
+  </main>
+</MainLayout>
