@@ -1,0 +1,52 @@
+---
+import Card from "./Card/index.astro";
+import { links } from "../lib/contacts.ts";
+
+const inputClass =
+  "text-md bg-gray-100 dark:bg-darkslate-400 rounded-2xl px-4 py-3 placeholder:text-gray-400 focus:outline-none border border-black dark:border-white !border-opacity-10 focus:!border-opacity-90 focus:!border-2";
+---
+
+<Card title="Contact" colSpan="md:col-span-2 h-fit">
+  <div class="flex flex-col gap-5 mt-2 text-pretty">
+    <p class="m-0">
+      If you have any questions or want to work together, feel free to contact
+      me by filling the contact form below or mailing me directly to <a
+        href={`mailto:${links.email}`}
+        class="hover:underline">lauris.gailius@gmail.com</a
+      >
+    </p>
+    <form
+      action="https://formcarry.com/s/1YT0xMOrP6K"
+      method="POST"
+      enctype="multipart/form-data"
+      class="flex flex-col gap-3 md:gap-4 lg:gap-5 justify-center"
+    >
+      <input
+        class={inputClass}
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+      />
+      <input
+        class={inputClass}
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+      <textarea
+        class={inputClass}
+        name="message"
+        rows="3"
+        placeholder="Enter your message"
+        required></textarea>
+      <div class="w-full flex justify-end">
+        <button
+          class="text-white dark:text-black bg-darkslate-900 dark:bg-white font-medium text-lg rounded-full duration-300 py-2 px-4"
+          type="submit">Send</button
+        >
+      </div>
+    </form>
+  </div>
+</Card>
