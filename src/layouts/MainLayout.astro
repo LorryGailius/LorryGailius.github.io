@@ -8,7 +8,9 @@ const { title, seoTitle, seoDesc } = Astro.props;
 
 <html lang="en" class="h-screen">
   <MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc} />
-  <body class="bg-gray-100 dark:bg-darkslate-600 flex flex-col h-full">
+  <body
+    class="bg-gray-100 dark:bg-darkslate-600 flex flex-col h-full sm:h-auto lg:h-full"
+  >
     <NavBar />
     <slot />
     <footer class="p-5">
