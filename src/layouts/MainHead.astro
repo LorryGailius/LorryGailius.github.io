@@ -25,5 +25,32 @@ const { title, seoTitle, seoDesc } = Astro.props;
     body {
       font-family: "Satoshi", sans-serif;
     }
+    html {
+      --scroll-thumb: #e5e5e5;
+      --scroll-thumb-hover: #d4d4d4;
+    }
+    ::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--scroll-thumb-hover);
+      border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--scroll-thumb);
+      border-radius: 9999px;
+    }
+
+    [data-theme="dark"] {
+      --scroll-thumb: #202020;
+      --scroll-thumb-hover: #2c2c2c;
+    }
   </style>
 </head>
