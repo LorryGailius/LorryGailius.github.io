@@ -7,37 +7,39 @@ const { projects, title } = Astro.props;
 const linkClass = "";
 ---
 
-<Card title={title} colSpan="sm:col-span-3">
-  {
-    projects.map((project: any) => (
-      <div>
-        <div class="flex flex-row gap-5 mt-5">
-          <a href={project.data.link} class=" hover:scale-105 duration-300">
-            <Image
-              width={100}
-              height={100}
-              src={project.data.image}
-              alt={`${project.data.title} logo`}
-              class="rounded-2xl max-w-24 max-h-24 hover:shadow-sm"
-            />
-          </a>
-          <div class="text-pretty">
-            <a href={project.data.link}>
-              <h1 class="font-bold text-xl hover:underline">
-                {project.data.title}
-              </h1>
+<Card title={title} colSpan="sm:col-span-3 sm:max-h-[600px] h-fit">
+  <div class="sm:overflow-auto sm:max-h-[32rem] px-2">
+    {
+      projects.map((project: any) => (
+        <div>
+          <div class="flex flex-row gap-5 mt-5">
+            <a href={project.data.link} class=" hover:scale-105 duration-300">
+              <Image
+                width={100}
+                height={100}
+                src={project.data.image}
+                alt={`${project.data.title} logo`}
+                class="rounded-2xl max-w-24 max-h-24 hover:shadow-sm"
+              />
             </a>
-            <p class="font-light text-ellipsis line-clamp-3">
-              {project.data.description}
-            </p>
+            <div class="text-pretty">
+              <a href={project.data.link}>
+                <h1 class="font-bold text-xl hover:underline">
+                  {project.data.title}
+                </h1>
+              </a>
+              <p class="font-light text-ellipsis line-clamp-3">
+                {project.data.description}
+              </p>
+            </div>
           </div>
+          {project.data.tags.map((tag: string) => (
+            <span class="inline-block px-3 py-1 mt-2 mr-2 text-sm font-semibold text-gray-700 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 rounded-full select-none">
+              {tag}
+            </span>
+          ))}
         </div>
-        {project.data.tags.map((tag: string) => (
-          <span class="inline-block px-3 py-1 mt-2 mr-2 text-sm font-semibold text-gray-700 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 rounded-full select-none">
-            {tag}
-          </span>
-        ))}
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </Card>
