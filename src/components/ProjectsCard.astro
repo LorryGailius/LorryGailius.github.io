@@ -12,7 +12,7 @@ const linkClass = "";
     {
       projects.map((project: any) => (
         <div>
-          <div class="flex flex-row gap-5 mt-5 pr-5">
+          <div class="flex flex-row gap-5 mt-5 sm:pr-5">
             <a href={project.data.link} class=" hover:scale-105 duration-300">
               <Image
                 width={100}
@@ -28,7 +28,7 @@ const linkClass = "";
                   {project.data.title}
                 </h1>
               </a>
-              <p class="font-light text-ellipsis line-clamp-2 sm:line-clamp-3">
+              <p class="font-light text-ellipsis line-clamp-3">
                 {project.data.description}
               </p>
             </div>
