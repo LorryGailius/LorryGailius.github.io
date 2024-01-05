@@ -4,8 +4,7 @@ import IntroCard from "../components/IntroCard.astro";
 import ProjectsCard from "../components/ProjectsCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
-
-const featured = ["VoronoiC", "Rock Paper Scissors"];
+import { featured } from "../lib/featured.ts";
 
 const projects = (await getCollection("projects"))
   .filter((project) => featured.includes(project.data.title))
