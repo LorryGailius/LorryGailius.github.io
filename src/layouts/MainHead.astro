@@ -21,7 +21,10 @@ const { title, seoTitle, seoDesc } = Astro.props;
       },
     }}
     extend={{
-      link: [{ rel: "icon", href: "/icon.ico" }],
+      link: [
+        { rel: "icon", href: "/icon.ico" },
+        { rel: "sitemap", href: "/sitemap-index.xml" },
+      ],
     }}
   />
   <meta charset="UTF-8" />
