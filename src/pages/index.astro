@@ -5,7 +5,11 @@ import ProjectsCard from "../components/ProjectsCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
-const projects = (await getCollection("projects")).slice(0, 2);
+const featured = ["VoronoiC", "Rock Paper Scissors"];
+
+const projects = (await getCollection("projects"))
+  .filter((project) => featured.includes(project.data.title))
+  .slice(0, 2);
 ---
 
 <MainLayout
