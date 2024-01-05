@@ -2,7 +2,7 @@
 
 A personal portfolio website built with [Astro](https://astro.build/)
 
-[Laurynas Gailius Portfolio Page](public/preview.png)
+![Laurynas Gailius Portfolio Page](public/preview.png)
 
 # Features
 
