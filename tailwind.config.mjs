@@ -44,6 +44,10 @@ export default {
           main: "#78003F",
         },
       },
+      screens: {
+        tall: { raw: "(min-height: 825px)" },
+        // => @media (min-height: 800px) { ... }
+      },
     },
   },
   plugins: [],
