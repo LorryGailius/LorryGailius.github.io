@@ -48,6 +48,10 @@ export const experience = [
     link: "https://www.postgresql.org/",
   },
   {
+    title: "Typescript",
+    link: "https://www.typescriptlang.org/"
+  },
+  {
     title: "MS SQL",
     link: "https://www.microsoft.com/en-us/sql-server/",
   },
